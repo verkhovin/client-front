@@ -1,15 +1,8 @@
 <div class="grid-container">
-  <div *ngFor="let event of events;let i = index" [class]="'event' + (i+1)"
-       [style.background-image]="'url('+event.body.image+')'">
-    <div>
-       <!-- <div class="image" >
-            <img
-                *ngIf="event.body && event.body.image"
-                [src]="event.body && event.body.image" alt="cyclone">
-        </div>-->
-        <h2 class="name">
-            {{ event.body.text }}
-        </h2>
-    </div>
-  </div>
+    <tile
+        *ngFor="let tile of tiles;let i = index"
+        [class]="'event' + (i+1)"
+        [style.background-image]="'url('+tile.body.image+')'"
+        [tile]="tile"
+    ></tile>
 </div>

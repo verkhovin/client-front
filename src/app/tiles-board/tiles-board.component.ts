@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ITile } from '@app/interfaces/ITile';
 
 @Component({
     selector: 'app-events-board',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tiles-board.style.scss']
 })
 export class TilesBoardComponent {
-    events = [
+    tiles = [
         {
             id: 'ddb1f958-bd2d-49fb-8a14-94d8d1f10958',
             type: 'alert',
@@ -23,7 +24,8 @@ export class TilesBoardComponent {
             score: 88.7844,
             isWatched: false,
             body: {
-                text: 'Jean Norris'
+                text: 'Jean Norris',
+                image: '../../assets/mont_blanc.jpg'
             }
         },
         {
@@ -32,7 +34,8 @@ export class TilesBoardComponent {
             score: 14.6434,
             isWatched: false,
             body: {
-                text: 'Nelda Miller'
+                text: 'Nelda Miller',
+                image: '../../assets/aerial.jpg'
             }
         },
         {
@@ -91,7 +94,8 @@ export class TilesBoardComponent {
             score: 13.0942,
             isWatched: false,
             body: {
-                text: 'Lolita Sims'
+                text: 'Lolita Sims',
+                image: '../../assets/3.jpg'
             }
         },
         {
@@ -100,7 +104,8 @@ export class TilesBoardComponent {
             score: 91.0121,
             isWatched: false,
             body: {
-                text: 'Holloway Thompson'
+                text: 'Holloway Thompson',
+                image: '../../assets/wisconsin.gif'
             }
         },
         {
@@ -109,7 +114,8 @@ export class TilesBoardComponent {
             score: 65.819,
             isWatched: false,
             body: {
-                text: 'Hammond Garner'
+                text: 'Hammond Garner',
+                image: '../../assets/1.jpg'
             }
         },
         {
@@ -122,9 +128,9 @@ export class TilesBoardComponent {
                 image: '../../assets/space.jpg'
             }
         }
-    ];
+    ] as ITile[];
 
     constructor() {
-        console.log(this.events);
+        console.log(this.tiles);
     }
 }
