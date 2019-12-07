@@ -1,0 +1,124 @@
+.grid-container {
+    display: grid;
+    height: 100%;
+
+    @media only screen and (min-width: 800px) and (max-width: 1920px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "event1 event1 event2 event8 event9 event5"
+            "event1 event1 event3 event4 event4 event6"
+            "event10 event12 event11 event4 event4 event7";
+    }
+
+    @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: portrait) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "event1 event1 event2"
+            "event1 event1 event3"
+            "event4 event5 event6"
+            "event8 event7 event7"
+            "event9 event7 event7"
+            "event10 event11 event12";
+    }
+
+    @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: landscape) {
+        grid-template-columns: 1fr 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media only screen and (max-device-width: 349px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "event1 event1"
+            "event1 event1"
+            "event2 event3"
+            "event4 event5"
+            "event8 event6"
+            "event7 event7"
+            "event7 event7"
+            "event9 event10"
+            "event11 event12";
+    }
+
+    & .image {
+        width: 100%;
+    }
+
+    & .name {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: rgba(255, 255, 255, 0.5);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.grid-container > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 1px;
+    background-size: cover;
+}
+
+.event1 {
+    grid-area: event1;
+    background-color: cadetblue;
+}
+
+.event2 {
+    grid-area: event2;
+    background-color: #4c8dff;
+}
+
+.event3 {
+    grid-area: event3;
+    background-color: #e0b500;
+}
+
+.event4 {
+    grid-area: event4;
+    background-color: dimgray;
+}
+
+.event5 {
+    grid-area: event5;
+    background-color: coral;
+}
+
+.event6 {
+    grid-area: event6;
+    background-color: olivedrab;
+}
+
+.event7 {
+    grid-area: event7;
+    background-color: teal;
+}
+
+.event8 {
+    grid-area: event8;
+    background-color: thistle;
+}
+
+.event9 {
+    grid-area: event9;
+    background-color: aqua;
+}
+
+.event10 {
+    grid-area: event10;
+    background-color: #d33939;
+}
+
+.event11 {
+    grid-area: event11;
+    background-color: aquamarine;
+}
+
+.event12 {
+    grid-area: event12;
+    background-color: brown;
+}
