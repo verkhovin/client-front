@@ -12,7 +12,7 @@
                 {{item.created | date  : 'd LLL yyyy hh:mm:ss' : undefined : 'ru'}}
             </ion-card-subtitle>
             <ion-card-content class="text">
-                {{ item.body.text }}
+                {{ item.body.text.split(' ').slice(0,3).join(' ') }}..
             </ion-card-content>
             <app-reaction></app-reaction>
             </ion-card>
