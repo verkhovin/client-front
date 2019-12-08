@@ -7,7 +7,7 @@ import { INsService, NsServiceToken } from '../../services/interfaces/INsService
     styleUrls: ['./feed.style.scss']
 })
 export class FeedComponent {
-    items$ = this.nsService.getItems();
+    items$ = this.nsService.getItems('3fd80556-a8a7-4eba-b4c1-a40ad250a3f6');
 
     constructor(
         @Inject(NsServiceToken)

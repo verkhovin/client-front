@@ -6,6 +6,6 @@ export const NsServiceToken = new InjectionToken(
     'NsServiceToken'
 );
 export interface INsService {
-    getTiles(): Observable<ITile[]>;
-    getItems(): Observable<IItem[]>;
+    getTiles(userId: string): Observable<ITile[]>;
+    getItems(tileId: string): Observable<IItem[]>;
 }
