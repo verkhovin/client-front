@@ -1,0 +1,49 @@
+body {
+    position: static;
+    overflow: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.row {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 800px) and (max-width: 1920px) {
+        .data {
+            width: 80%;
+            height: 350px;
+            background-size: cover;
+
+        }
+    }
+
+    @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: portrait) {
+        .data {
+            width: 90vw;
+            height: 350px;
+            background-size: cover;
+
+        }
+    }
+
+    & + & {
+        margin-top: 20px;
+    }
+
+    .item-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+
+    .text {
+        word-wrap: break-word;
+    }
+}
+

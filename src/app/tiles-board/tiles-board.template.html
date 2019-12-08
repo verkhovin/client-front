@@ -1,6 +1,6 @@
 <div class="grid-container">
     <tile
-        *ngFor="let tile of tiles;let i = index"
+        *ngFor="let tile of tiles$ | async;let i = index"
         [class]="'event' + (i+1)"
         [style.background-image]="'url('+tile.body.image+')'"
         [tile]="tile"

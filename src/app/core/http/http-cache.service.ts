@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 
-import { Logger } from '../logger.service';
-
-const log = new Logger('HttpCacheService');
 const cachePersistenceKey = 'httpCache';
 
 export interface HttpCacheEntry {
@@ -36,7 +33,7 @@ export class HttpCacheService {
             lastUpdated: lastUpdated || new Date(),
             data
         };
-        log.debug(`Cache set for key: "${url}"`);
+
         this.saveCacheData();
     }
 
@@ -49,7 +46,6 @@ export class HttpCacheService {
         const cacheEntry = this.cachedData[url];
 
         if (cacheEntry) {
-            log.debug(`Cache hit for key: "${url}"`);
             return cacheEntry.data;
         }
 
@@ -71,7 +67,6 @@ export class HttpCacheService {
      */
     clearCache(url: string): void {
         delete this.cachedData[url];
-        log.debug(`Cache cleared for key: "${url}"`);
         this.saveCacheData();
     }
 
@@ -94,8 +89,10 @@ export class HttpCacheService {
 
     /**
      * Sets the cache persistence policy.
-     * Note that changing the cache persistence will also clear the cache from its previous storage.
-     * @param persistence How the cache should be persisted, it can be either local or session storage, or if no value is
+     * Note that changing the cache persistence will also clear
+     * the cache from its previous storage.
+     * @param persistence How the cache should be persisted, it can be either
+     * local or session storage, or if no value is
      *   provided it will be only in-memory (default).
      */
     setPersistence(persistence?: 'local' | 'session') {

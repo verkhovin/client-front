@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeedComponent } from './feed.component';
-import { ArticleModule } from '@app/article/article.module';
+import { ReactionModule } from '@app/reaction/reaction.module';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -9,7 +10,8 @@ import { ArticleModule } from '@app/article/article.module';
   declarations: [FeedComponent],
     imports: [
         CommonModule,
-        ArticleModule
+        ReactionModule,
+        IonicModule
     ],
     exports: [FeedComponent]
 })

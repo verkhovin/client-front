@@ -1,6 +1,9 @@
+
 .grid-container {
     display: grid;
-    height: 100%;
+    width:100vw;
+    height:100vh;
+
 
     @media only screen and (min-width: 800px) and (max-width: 1920px) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -8,10 +11,11 @@
         grid-template-areas:
             "event1 event1 event2 event8 event9 event5"
             "event1 event1 event3 event4 event4 event6"
-            "event10 event12 event11 event4 event4 event7";
+            "event10 event11 event12 event4 event4 event7";
     }
 
     @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: portrait) {
+        max-width: 100vw;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
@@ -20,21 +24,41 @@
             "event4 event5 event6"
             "event8 event7 event7"
             "event9 event7 event7"
-            "event10 event11 event12";
+            "event11 event12 event10";
     }
 
-    @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: landscape) {
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-height: 896px)
+    and (orientation: portrait) {
+        width: 100vw;
+        height: 150vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "event1 event1 "
+            "event1 event1 "
+            "event4 event5 "
+            "event7 event7 "
+            " event7 event7"
+            "event11 event11"
+            "event2 event3"
+            "event6 event3"
+            "event8 event9";
+    }
+
+        @media only screen and (min-device-width: 350px) and (max-device-width: 799px) and (orientation: landscape) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "event1 event1 event2 event8 event9 event5"
             "event1 event1 event3 event4 event4 event6"
-            "event10 event12 event11 event4 event4 event7";
+            "event10 event11 event11 event4 event4 event7";
     }
 
     @media only screen and (max-device-width: 349px) {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
         grid-template-areas:
             "event1 event1"
             "event1 event1"
@@ -44,7 +68,7 @@
             "event7 event7"
             "event7 event7"
             "event9 event10"
-            "event11 event12";
+            "event11 event11";
     }
 }
 
@@ -52,7 +76,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin: 1px;
     background-size: cover;
 }
 
@@ -98,7 +121,7 @@
 
 .event9 {
     grid-area: event9;
-    background-color: aqua;
+    background-color: orange;
 }
 
 .event10 {
@@ -108,7 +131,7 @@
 
 .event11 {
     grid-area: event11;
-    background-color: aquamarine;
+    background-color: orangered;
 }
 
 .event12 {

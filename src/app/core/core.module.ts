@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { HttpService } from './http/http.service';
+import { NsServiceToken } from '../../services/interfaces/INsService';
+import { NsService } from '../../services/ns.service';
 
 @NgModule({
     imports: [CommonModule, HttpClientModule, TranslateModule, RouterModule],
@@ -12,6 +14,10 @@ import { HttpService } from './http/http.service';
         {
             provide: HttpClient,
             useClass: HttpService
+        },
+        {
+            provide: NsServiceToken,
+            useClass: NsService
         }
     ]
 })

@@ -1,1 +1,20 @@
-<app-article></app-article>
+<div class="wrapper">
+    <div
+        *ngFor="let item of items$ | async"
+        class="row"
+    >
+        <ion-card>
+            <div class="data" [style.background-image]="getImgUrl(item.body.image)"></div>
+            <ion-card-title>
+                Title
+            </ion-card-title>
+            <ion-card-subtitle>
+                {{item.created | date  : 'd LLL yyyy hh:mm:ss' : undefined : 'ru'}}
+            </ion-card-subtitle>
+            <ion-card-content class="text">
+                {{ item.body.text }}
+            </ion-card-content>
+            <app-reaction></app-reaction>
+            </ion-card>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { IContent } from '@app/interfaces/IContent';
+import { IContent } from './IContent';
 
 export interface ITile {
     id: string;

@@ -7,17 +7,19 @@ import { IonicModule } from '@ionic/angular';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
-import { SharedModule } from '@app/shared';
+import { SharedModule } from '../shared';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TilesBoardModule } from './tiles-board/tiles-board.module';
 import { FeedModule } from '@app/feed/feed.module';
+import {registerLocaleData} from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
     imports: [
         BrowserModule,
-        ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
-        FormsModule,
         HttpClientModule,
         IonicModule.forRoot(),
         CoreModule,
