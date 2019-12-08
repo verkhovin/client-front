@@ -10,15 +10,9 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 export class TilesBoardComponent {
     tiles$ = this.nsService.getTiles('45652283-d58a-4653-a4f1-d037b1a14c97');
 
-    private router = Router;
-
     constructor(
         @Inject(NsServiceToken)
         private readonly nsService: INsService
     ) {
-    }
-
-    onTileClick(id: string) {
-        this.router.navigate('/feed')
     }
 }
