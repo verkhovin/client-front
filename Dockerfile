@@ -3,6 +3,7 @@ FROM tiangolo/node-frontend:10 as build-stage
 WORKDIR /app
 COPY package*.json /app/
 COPY nginx-custom.conf /etc/nginx/extra-conf.d
+RUN ln -s /etc/nginx/extra-conf.d/nginx-custom.conf /etc/nginx/sites-enabled
 RUN npm install
 COPY ./ /app/
 ARG configuration=production

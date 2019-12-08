@@ -13,12 +13,16 @@ body {
     display: flex;
     flex-direction: column;
 
+
     @media only screen and (min-width: 800px) and (max-width: 1920px) {
         .data {
-            width: 80%;
-            height: 350px;
+            width: 70vw;
+            height: 40vh;
             background-size: cover;
 
+            .text {
+                word-wrap: break-word;
+            }
         }
     }
 
