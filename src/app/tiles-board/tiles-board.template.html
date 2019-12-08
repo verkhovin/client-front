@@ -4,7 +4,6 @@
         [class]="'event' + (i+1)"
         [style.background-image]="'url('+tile.body.image+')'"
         [tile]="tile"
-        routerLink="/feed"
-        (onClick)="onTileClick(tile.id)"
+        [routerLink]="'/feed/' + tile.id"
     ></tile>
 </div>

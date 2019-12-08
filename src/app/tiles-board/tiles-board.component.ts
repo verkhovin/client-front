@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { INsService, NsServiceToken } from '../../services/interfaces/INsService';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-events-board',

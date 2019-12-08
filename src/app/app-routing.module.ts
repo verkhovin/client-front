@@ -5,7 +5,7 @@ import { FeedComponent } from '@app/feed/feed.component';
 
 const routes: Routes = [
     { path: '', component: TilesBoardComponent },
-    { path: 'feed', component: FeedComponent}
+    { path: 'feed/:id', component: FeedComponent}
 ];
 
 @NgModule({
